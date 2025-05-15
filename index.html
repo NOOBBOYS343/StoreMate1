@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StoreMate Discord Bot</title>
+    <meta name="description" content="Powerful Discord bot with AutoBuy, Ticket System, and Package Management for your store">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .hero-gradient {
+            background: linear-gradient(to bottom, #f0f9ff, #e0f2fe);
+        }
+        
+        .StoreMate-glow {
+            position: relative;
+        }
+        
+        .StoreMate-glow::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(56, 182, 255, 0.2) 0%, transparent 70%);
+            z-index: -1;
+        }
+        
+        .btn-hover-effect {
+            transition: all 0.3s ease;
+        }
+        
+        .btn-hover-effect:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(56, 182, 255, 0.2);
+        }
+        
+        .feature-card {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            border-color: rgba(14, 165, 233, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    <div class="flex flex-col min-h-screen">
+        <!-- Navigation -->
+        <nav class="bg-white shadow-sm">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between h-16 items-center">
+                    <div class="flex items-center">
+                        <span class="text-xl font-bold text-primary-600">StoreMate</span>
+                    </div>
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a href="#features" class="text-gray-700 hover:text-primary-600">Features</a>
+                        <a href="premium.html" class="text-gray-700 hover:text-primary-600">Premium</a>
+                        <a href="https://discord.gg/" target="_blank" class="text-gray-700 hover:text-primary-600">Support</a>
+                    </div>
+                    <div class="md:hidden">
+                        <button class="mobile-menu-button">
+                            <i data-lucide="menu" class="h-6 w-6"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero-gradient py-20 md:py-32">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+                    <div class="md:w-1/2" id="hero-text">
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+                             <span class="text-primary-600">StoreMate</span>
+                        </h1>
+                        <p class="text-xl text-gray-600 mb-8">
+                            A powerful Discord bot packed with AutoBuy, Ticket, Package Management, and more to enhance your store experience.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="https://discord.com/oauth2/" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="btn-hover-effect bg-primary-600 text-white px-6 py-3 rounded-md text-lg font-medium transition-all duration-300 hover:bg-primary-700">
+                                Add to Discord
+                            </a>
+                            <a href="premium.html" 
+                            class="border border-primary-600 text-primary-600 px-6 py-3 rounded-md text-lg font-medium transition-all duration-300 hover:bg-primary-50">
+                            Get Premium
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 relative" id="hero-image">
+                        <div class="relative h-[300px] md:h-[400px] w-full StoreMate-glow">
+                            <!-- Local image reference -->
+                            <img src="storemate.png" 
+                                 alt="StoreMate Discord Bot" 
+                                 class="object-contain h-full w-full"
+                                 loading="lazy"
+                                 width="400"
+                                 height="400">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="py-20 bg-white" id="features">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Powerful Features</h2>
+                    <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                        StoreMate comes packed with everything you need to make your Discord server amazing.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="features-grid">
+                    <div class="feature-card bg-white h-full rounded-lg overflow-hidden shadow-sm transition-all duration-300">
+                        <div class="p-6 flex flex-col items-center text-center">
+                            <div class="mb-4 p-3 rounded-full bg-primary-50">
+                                <i data-lucide="shield" class="h-10 w-10 text-primary-600"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Auto Buy</h3>
+                            <p class="text-gray-600">With Automatically Payment Detect System</p>
+                        </div>
+                    </div>
+                    <div class="feature-card bg-white h-full rounded-lg overflow-hidden shadow-sm transition-all duration-300">
+                        <div class="p-6 flex flex-col items-center text-center">
+                            <div class="mb-4 p-3 rounded-full bg-primary-50">
+                                <i data-lucide="settings" class="h-10 w-10 text-primary-600"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Ticket System</h3>
+                            <p class="text-gray-600">Advanced Ticket System for customer support</p>
+                        </div>
+                    </div>
+                    <div class="feature-card bg-white h-full rounded-lg overflow-hidden shadow-sm transition-all duration-300">
+                        <div class="p-6 flex flex-col items-center text-center">
+                            <div class="mb-4 p-3 rounded-full bg-primary-50">
+                                <i data-lucide="package" class="h-10 w-10 text-primary-600"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Package Management</h3>
+                            <p class="text-gray-600">Multi Package Buy System for your products</p>
+                        </div>
+                    </div>
+                    <div class="feature-card bg-white h-full rounded-lg overflow-hidden shadow-sm transition-all duration-300">
+                        <div class="p-6 flex flex-col items-center text-center">
+                            <div class="mb-4 p-3 rounded-full bg-primary-50">
+                                <i data-lucide="lock" class="h-10 w-10 text-primary-600"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Security</h3>
+                            <p class="text-gray-600">Secure payment verification system</p>
+                        </div>
+                    </div>
+                    <div class="feature-card bg-white h-full rounded-lg overflow-hidden shadow-sm transition-all duration-300">
+                        <div class="p-6 flex flex-col items-center text-center">
+                            <div class="mb-4 p-3 rounded-full bg-primary-50">
+                                <i data-lucide="users" class="h-10 w-10 text-primary-600"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">User Management</h3>
+                            <p class="text-gray-600">Easy management of your customers</p>
+                        </div>
+                    </div>
+                    <div class="feature-card bg-white h-full rounded-lg overflow-hidden shadow-sm transition-all duration-300">
+                        <div class="p-6 flex flex-col items-center text-center">
+                            <div class="mb-4 p-3 rounded-full bg-primary-50">
+                                <i data-lucide="bar-chart-2" class="h-10 w-10 text-primary-600"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Analytics</h3>
+                            <p class="text-gray-600">Track your store performance</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="py-20 bg-primary-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <h3 class="text-4xl md:text-5xl font-bold text-primary-600 mb-2">10+</h3>
+                        <p class="text-lg text-gray-600">Servers</p>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="text-4xl md:text-5xl font-bold text-primary-600 mb-2">1000+</h3>
+                        <p class="text-lg text-gray-600">Users</p>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="text-4xl md:text-5xl font-bold text-primary-600 mb-2">50+</h3>
+                        <p class="text-lg text-gray-600">Commands</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-primary-50 rounded-2xl p-8 md:p-12 text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to make your server advanced?</h2>
+                    <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                        Many servers already using StoreMate to enhance their Discord store experience.
+                    </p>
+                    <a href="https://discord.com/oauth2/" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="btn-hover-effect bg-primary-600 text-white px-6 py-3 rounded-md text-lg font-medium transition-all duration-300 hover:bg-primary-700 inline-block">
+                        Add StoreMate to Discord
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-50 py-8">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="mb-4 md:mb-0">
+                        <span class="text-xl font-bold text-primary-600">StoreMate</span>
+                        <p class="text-gray-600 mt-2">© 2023 StoreMate Bot. All rights reserved.</p>
+                    </div>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-600 hover:text-primary-600">Terms</a>
+                        <a href="#" class="text-gray-600 hover:text-primary-600">Privacy</a>
+                        <a href="https://discord.gg/hdsTnN9gfQ" target="_blank" class="text-gray-600 hover:text-primary-600">Support</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Simple animation on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            // Hero section animations
+            const heroText = document.getElementById('hero-text');
+            const heroImage = document.getElementById('hero-image');
+            const featuresGrid = document.getElementById('features-grid');
+            
+            // Set initial state
+            heroText.style.opacity = '0';
+            heroText.style.transform = 'translateX(-50px)';
+            heroImage.style.opacity = '0';
+            heroImage.style.transform = 'scale(0.8)';
+            
+            // Animate in
+            setTimeout(() => {
+                heroText.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                heroText.style.opacity = '1';
+                heroText.style.transform = 'translateX(0)';
+                
+                heroImage.style.transition = 'opacity 0.5s ease 0.2s, transform 0.5s ease 0.2s';
+                heroImage.style.opacity = '1';
+                heroImage.style.transform = 'scale(1)';
+            }, 100);
+            
+            // Features grid animation
+            const featureCards = featuresGrid.querySelectorAll('.feature-card');
+            featureCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = `opacity 0.3s ease ${index * 0.1}s, transform 0.3s ease ${index * 0.1}s`;
+                
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 500 + (index * 100));
+            });
+        });
+    </script>
+</body>
+</html>

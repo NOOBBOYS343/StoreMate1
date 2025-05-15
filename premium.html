@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StoreMate Premium</title>
+    <meta name="description" content="Upgrade to StoreMate Premium for advanced features like priority support, unlimited packages, and enhanced analytics">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .hero-gradient {
+            background: linear-gradient(to bottom, #f0f9ff, #e0f2fe);
+        }
+        
+        .pricing-card {
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(14, 165, 233, 0.1);
+        }
+        
+        .popular-badge {
+            background: linear-gradient(45deg, #0ea5e9, #38bdf8);
+        }
+        
+        .feature-badge {
+            background-color: rgba(14, 165, 233, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    <div class="flex flex-col min-h-screen">
+        <!-- Navigation -->
+        <nav class="bg-white shadow-sm">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between h-16 items-center">
+                    <div class="flex items-center">
+                        <a href="/" class="text-xl font-bold text-primary-600">StoreMate</a>
+                    </div>
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a href="/#features" class="text-gray-700 hover:text-primary-600">Features</a>
+                        <a href="/premium" class="text-primary-600 font-medium">Premium</a>
+                        <a href="https://discord.gg/hdsTnN9gfQ" target="_blank" class="text-gray-700 hover:text-primary-600">Support</a>
+                    </div>
+                    <div class="md:hidden">
+                        <button class="mobile-menu-button">
+                            <i data-lucide="menu" class="h-6 w-6"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero-gradient py-16 md:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">StoreMate <span class="text-primary-600">Premium</span></h1>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Unlock advanced features and take your Discord store to the next level
+                </p>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Plans</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Choose the plan that fits your needs. Cancel anytime.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <!-- Basic Plan -->
+                    <div class="pricing-card bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
+                        <div class="mb-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Basic</h3>
+                            <p class="text-gray-600 mb-4">For small stores just getting started</p>
+                            <div class="flex items-end">
+                                <span class="text-4xl font-bold text-gray-900">$5</span>
+                                <span class="text-gray-500 ml-1">/month</span>
+                            </div>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="h-5 w-5 text-primary-600 mr-2"></i>
+                                <span>Auto Buy System</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="h-5 w-5 text-primary-600 mr-2"></i>
+                                <span>Basic Ticket Support</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="h-5 w-5 text-primary-600 mr-2"></i>
+                                <span>5 Package Slots</span>
+                            </li>
+                            <li class="flex items-center text-gray-400">
+                                <i data-lucide="x" class="h-5 w-5 mr-2"></i>
+                                <span>Priority Support</span>
+                            </li>
+                            <li class="flex items-center text-gray-400">
+                                <i data-lucide="x" class="h-5 w-5 mr-2"></i>
+                                <span>Advanced Analytics</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="block w-full bg-primary-600 hover:bg-primary-700 text-white text-center py-3 px-4 rounded-lg font-medium transition duration-200">
+                            Get Started
+                        </a>
+                    </div>
+
+                    <!-- Pro Plan (Featured) -->
+                    <div class="pricing-card bg-white border-2 border-primary-600 rounded-xl p-6 transform scale-105 relative shadow-md">
+                        <div class="absolute top-0 right-0 popular-badge text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">
+                            MOST POPULAR
+                        </div>
+                        <div class="mb-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Pro</h3>
+                            <p class="text-gray-600 mb-4">Perfect for growing communities</p>
+                            <div class="flex items-end">
+                                <span class="text-4xl font-bold text-gray-900">$10</span>
+                                <span class="text-gray-500 ml-1">/month</span>
+                            </div>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="h-5 w-5 text-primary-600 mr-2"></i>
+                                <span>Everything in Basic</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="h-5 w-5 text-primary-600 mr-2"></i>
+                                <span>Custom Ticket System</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="h-5 w-5 text-primary-600 mr-2"></i>
+                                <span>Unlimited Packages</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="h-5 w-5 text-primary-600 mr-2"></i>
+                                <span>Priority Support</span>
+                            </li>
+                            <li class="flex items-center text-gray-400">
+                                <i data-lucide="x" class="h-5 w-5 mr-2"></i>
+                                <span>Advanced Analytics</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="block w-full bg-primary-600 hover:bg-primary-700 text-white text-center py-3 px-4 rounded-lg font-medium transition duration-200">
+                            Get Started
+                        </a>
+                    </div>
+
+                    <!-- Enterprise Plan -->
+                    <div class="pricing-card bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
+                        <div class="mb-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Enterprise</h3>
+                            <p class="text-gray-600 mb-4">For large stores and businesses</p>
+                            <div class="flex items-end">
+                                <span class="text-4xl font-bold text-gray-900">$20</span>
+                                <span class="text-gray-500 ml-1">/month</span>
+                            </div>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="h-5 w-5 text-primary-600 mr-2"></i>
+                                <span>Everything in Pro</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="h-5 w-5 text-primary-600 mr-2"></i>
+                                <span>Advanced Analytics</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="h-5 w-5 text-primary-600 mr-2"></i>
+                                <span>Custom Bot Development</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="h-5 w-5 text-primary-600 mr-2"></i>
+                                <span>24/7 Priority Support</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="h-5 w-5 text-primary-600 mr-2"></i>
+                                <span>API Access</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="block w-full bg-primary-600 hover:bg-primary-700 text-white text-center py-3 px-4 rounded-lg font-medium transition duration-200">
+                            Get Started
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="py-16 bg-primary-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Premium Features</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Everything you get with StoreMate Premium
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <div class="flex items-center mb-4">
+                            <div class="p-2 rounded-full bg-primary-100 mr-4">
+                                <i data-lucide="zap" class="h-6 w-6 text-primary-600"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-900">Priority Processing</h3>
+                        </div>
+                        <p class="text-gray-600">Your commands and transactions get processed before free users for faster service.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <div class="flex items-center mb-4">
+                            <div class="p-2 rounded-full bg-primary-100 mr-4">
+                                <i data-lucide="infinite" class="h-6 w-6 text-primary-600"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-900">Unlimited Packages</h3>
+                        </div>
+                        <p class="text-gray-600">Create as many product packages as you need with no restrictions.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <div class="flex items-center mb-4">
+                            <div class="p-2 rounded-full bg-primary-100 mr-4">
+                                <i data-lucide="bar-chart-2" class="h-6 w-6 text-primary-600"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-900">Advanced Analytics</h3>
+                        </div>
+                        <p class="text-gray-600">Detailed sales reports and customer insights to grow your business.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <div class="flex items-center mb-4">
+                            <div class="p-2 rounded-full bg-primary-100 mr-4">
+                                <i data-lucide="headphones" class="h-6 w-6 text-primary-600"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-900">Priority Support</h3>
+                        </div>
+                        <p class="text-gray-600">Jump to the front of the line with dedicated premium support.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <div class="flex items-center mb-4">
+                            <div class="p-2 rounded-full bg-primary-100 mr-4">
+                                <i data-lucide="palette" class="h-6 w-6 text-primary-600"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-900">Custom Branding</h3>
+                        </div>
+                        <p class="text-gray-600">Customize the bot's appearance to match your store's brand.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <div class="flex items-center mb-4">
+                            <div class="p-2 rounded-full bg-primary-100 mr-4">
+                                <i data-lucide="shield" class="h-6 w-6 text-primary-600"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-900">Enhanced Security</h3>
+                        </div>
+                        <p class="text-gray-600">Additional security features to protect your store and customers.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">What Our Users Say</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Trusted by hundreds of Discord store owners
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center mr-4">
+                                <span class="text-primary-600 font-bold">JD</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">John D.</h4>
+                                <div class="flex text-yellow-400">
+                                    <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                                    <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                                    <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                                    <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                                    <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600">"StoreMate Premium has doubled my sales with the auto-buy feature. Worth every penny!"</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center mr-4">
+                                <span class="text-primary-600 font-bold">SM</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Sarah M.</h4>
+                                <div class="flex text-yellow-400">
+                                    <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                                    <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                                    <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                                    <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                                    <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600">"The analytics alone make Premium worth it. I've optimized my store based on the data."</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center mr-4">
+                                <span class="text-primary-600 font-bold">AT</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Alex T.</h4>
+                                <div class="flex text-yellow-400">
+                                    <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                                    <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                                    <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                                    <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                                    <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600">"Priority support has saved me hours of troubleshooting. The team is incredibly responsive."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-16 bg-primary-600">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl font-bold text-white mb-6">Ready to Upgrade?</h2>
+                <p class="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
+                    Join thousands of servers using StoreMate Premium to boost their sales and efficiency.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#" class="bg-white text-primary-600 px-6 py-3 rounded-lg text-lg font-medium hover:bg-gray-100 transition duration-200">
+                        Get Premium Now
+                    </a>
+                    <a href="https://discord.gg/hdsTnN9gfQ" target="_blank" class="border border-white text-white px-6 py-3 rounded-lg text-lg font-medium hover:bg-primary-700 transition duration-200">
+                        Ask Questions
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-50 py-8">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="mb-4 md:mb-0">
+                        <a href="/" class="text-xl font-bold text-primary-600">StoreMate</a>
+                        <p class="text-gray-600 mt-2">© 2023 StoreMate Bot. All rights reserved.</p>
+                    </div>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-600 hover:text-primary-600">Terms</a>
+                        <a href="#" class="text-gray-600 hover:text-primary-600">Privacy</a>
+                        <a href="https://discord.gg/" target="_blank" class="text-gray-600 hover:text-primary-600">Support</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
